@@ -1,26 +1,38 @@
-.header {
+header {
   height: 8rem;
+  background-color: #fff;
+  border-bottom: 1px solid #08194a;
+}
+.header {
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
-  background-color: blue;
-  color: #fff;
+  padding: 0 6rem;
+
+  color: #08194a;
 }
 
 .logo-link {
   font-size: 2rem;
   font-weight: 700;
-  color: #fff;
+  color: #08194a;
   text-transform: uppercase;
+  transition: 300ms;
 }
 
 .navigation {
   display: flex;
+  align-items: center;
   gap: 2.5rem;
 }
 
 .header .nav-link {
   font-size: 1.8rem;
-  color: #fff;
+  color: #08194a;
+  font-weight: 600;
+}
+
+.header .nav-link:hover {
+  color: #ee0d09;
 }

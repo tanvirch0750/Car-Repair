@@ -1,0 +1,33 @@
+.signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  width: 60rem;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+form h1 {
+  color: #08194a;
+  text-align: center;
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+
+form button {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border: none;
+  background-color: #08194a;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}

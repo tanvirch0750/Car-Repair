@@ -1,0 +1,26 @@
+.sub-header {
+  height: 6rem;
+  display: grid;
+  grid-template-columns: 35fr 65fr;
+}
+
+.sub-header p {
+  font-size: 1.8rem;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.sub-header-first {
+  background-color: #ee0d09;
+  padding-left: 2rem;
+  display: flex;
+  align-items: center;
+}
+.sub-header-second {
+  background-color: #08194a;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
