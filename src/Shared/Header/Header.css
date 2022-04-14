@@ -1,0 +1,26 @@
+.header {
+  height: 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  background-color: blue;
+  color: #fff;
+}
+
+.logo-link {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.navigation {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.header .nav-link {
+  font-size: 1.8rem;
+  color: #fff;
+}
