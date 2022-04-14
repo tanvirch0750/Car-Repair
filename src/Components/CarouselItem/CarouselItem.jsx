@@ -2,9 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import "./CarouselItem.css";
 
-export const CarouselItem = ({ children, width }) => {
+export const CarouselItem = ({ children, width, item }) => {
+  const { image, heading } = item;
   return (
-    <div className="carousel-item" style={{ width: width }}>
+    <div
+      className="carousel-item"
+      style={{ width: width, backgroundImage: `url(${image})` }}
+    >
       {children}
     </div>
   );
@@ -59,13 +63,13 @@ const Carousel = ({ children }) => {
         })}
       </div>
       <div className="indicators">
-        <button
+        {/* <button
           onClick={() => {
             updateIndex(activeIndex - 1);
           }}
         >
           Prev
-        </button>
+        </button> */}
         {React.Children.map(children, (child, index) => {
           return (
             <button
@@ -78,13 +82,13 @@ const Carousel = ({ children }) => {
             </button>
           );
         })}
-        <button
+        {/* <button
           onClick={() => {
             updateIndex(activeIndex + 1);
           }}
         >
           Next
-        </button>
+        </button> */}
       </div>
     </div>
   );

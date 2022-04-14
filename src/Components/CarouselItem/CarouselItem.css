@@ -1,5 +1,6 @@
 .carousel {
   overflow: hidden;
+  position: relative;
 }
 
 .inner {
@@ -9,23 +10,31 @@
 
 .carousel-item {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 200px;
-  background-color: red;
+  height: calc(100vh - 14rem);
   color: #fff;
+  background-size: cover;
+  background-position: center;
 }
 
 .indicators {
   display: flex;
   justify-content: center;
+
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .indicators > button {
+  border: none;
+  width: 3rem;
+  height: 3rem;
   margin: 5px;
+  border-radius: 100px;
 }
 
 .indicators > button.active {
-  background-color: red;
+  background-color: #ee0d09;
   color: #fff;
 }
