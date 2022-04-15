@@ -7,6 +7,7 @@ import Signup from "./Pages/Authentication/Signup/Signup";
 import Home from "./Pages/Home/Home";
 import NotFound from "./Pages/NotFound/NotFound";
 import Products from "./Pages/Products/Products";
+import Footer from "./Shared/Footer/Footer";
 import Header from "./Shared/Header/Header";
 import SubHeader from "./Shared/Sub-Header/SubHeader";
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
+      <Footer />
     </div>
   );
 }
