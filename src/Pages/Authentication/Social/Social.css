@@ -1,0 +1,13 @@
+.or-separator {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 2rem;
+  padding: 1.5rem;
+}
+.or-separator div {
+  height: 1px;
+  width: 100%;
+  background-color: #08194a;
+  margin-top: 5.2px;
+}

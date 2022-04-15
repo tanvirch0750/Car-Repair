@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import FormInput from "../../../Components/FormInput/FormInput";
+import Social from "../Social/Social";
 import "./Signup.css";
 
 const Signup = () => {
@@ -98,6 +100,13 @@ const Signup = () => {
           />
         ))}
         <button>Register</button>
+        <p className="login-signup-text">
+          Already have an account?{" "}
+          <Link to="/login" className="login-signup-link">
+            Login
+          </Link>
+        </p>
+        <Social text="Signup" />
       </form>
     </div>
   );
