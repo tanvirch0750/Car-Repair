@@ -1,0 +1,21 @@
+.user-text {
+  height: calc(100vh - 14rem);
+  background: linear-gradient(
+      to right,
+      rgba(8, 24, 74, 0.685) 100%,
+      transparent
+    ),
+    url("../../images/page-head.jpg");
+  background-size: cover;
+  background-position: center;
+
+  padding: 3rem 6rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 3rem;
+  color: #fff;
+  padding: 3rem;
+}

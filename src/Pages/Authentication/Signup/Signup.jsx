@@ -1,7 +1,12 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import {
+  useAuthState,
+  useCreateUserWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
+import { Link, useNavigate } from "react-router-dom";
 import FormInput from "../../../Components/FormInput/FormInput";
 import PageHeadImg from "../../../Components/Page-head-img/PageHeadImg";
+import auth from "../../../Firebase/Firebase.init";
 import Social from "../Social/Social";
 import "./Signup.css";
 
@@ -12,6 +17,11 @@ const Signup = () => {
     password: "",
     confirmPassword: "",
   });
+  const [customError, setCustomError] = useState("");
+
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const [user1] = useAuthState(auth);
 
   const inputs = [
     {
@@ -60,6 +70,16 @@ const Signup = () => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 
+  useEffect(() => {
+    if (error) {
+      if (error.message.includes("auth/email-already-in-use")) {
+        setCustomError("Alreary have an account with this email");
+      } else {
+        setCustomError(error.message);
+      }
+    }
+  });
+
   const handleSubmit = (e) => {
     e.preventDefault();
     function validateEmail(email) {
@@ -80,13 +100,22 @@ const Signup = () => {
       validatePassword(values.password) === false ||
       values.password !== values.confirmPassword
     ) {
-      console.log("There is a error");
+      alert("Something went wrong, please provide valid data");
     } else {
-      console.log("submit");
+      createUserWithEmailAndPassword(values.email, values.password);
     }
   };
 
-  console.log(values);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (user) {
+      if (user1?.emailVerified === true) {
+        navigate("/appointment");
+      } else {
+        navigate("/verifyEmail");
+      }
+    }
+  }, [user, navigate, user1]);
 
   return (
     <>
@@ -102,6 +131,7 @@ const Signup = () => {
               onChange={onChange}
             />
           ))}
+          {customError && <p className="error-message">{customError}</p>}
           <button>Register</button>
           <p className="login-signup-text">
             Already have an account?{" "}

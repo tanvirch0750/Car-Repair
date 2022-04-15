@@ -62,3 +62,10 @@ form .social-btn {
   color: #ee0d09;
   margin-left: 0.5rem;
 }
+
+.error-message {
+  font-size: 1.8rem;
+  text-align: center;
+  color: #ee0d09;
+  font-weight: 600;
+}
