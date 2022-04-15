@@ -27,6 +27,7 @@ const Signup = () => {
       placeholder: "Email",
       errorMessage: "It should be a valid email address!",
       label: "Email",
+      pattern: `^[^\s@]+@[^\s@]+\.[^\s@]+$`,
       required: true,
     },
     {
@@ -52,14 +53,37 @@ const Signup = () => {
     },
   ];
 
-  const handleSubmit = (e) => {
-    console.log("submit");
-    e.preventDefault();
-  };
-
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+
+    function validatePassword(password) {
+      const re =
+        /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
+      return re.test(password);
+    }
+
+    if (
+      values.displayName === "" ||
+      values.email === "" ||
+      validateEmail(values.email) === false ||
+      validatePassword(values.password) === false ||
+      values.password !== values.confirmPassword
+    ) {
+      console.log("There is a error");
+    } else {
+      console.log("submit");
+    }
+  };
+
+  console.log(values);
 
   return (
     <div className="signup">
