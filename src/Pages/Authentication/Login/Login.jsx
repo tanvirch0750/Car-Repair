@@ -3,7 +3,7 @@ import {
   useAuthState,
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import FormInput from "../../../Components/FormInput/FormInput";
 import PageHeadImg from "../../../Components/Page-head-img/PageHeadImg";
 import auth from "../../../Firebase/Firebase.init";
@@ -15,6 +15,9 @@ const Login = () => {
   const [user1] = useAuthState(auth);
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+
+  const location = useLocation();
+  const from = location?.state?.from?.pathname || "/";
 
   const [values, setValues] = useState({
     email: "",
@@ -65,12 +68,12 @@ const Login = () => {
   useEffect(() => {
     if (user) {
       if (user1?.emailVerified === true) {
-        navigate("/appointment");
+        navigate(from, { replace: true });
       } else {
         navigate("/verifyEmail");
       }
     }
-  }, [user, navigate, user1]);
+  }, [user, navigate, user1, from]);
 
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });

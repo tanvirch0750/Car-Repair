@@ -4,6 +4,7 @@ import UserText from "./Components/UserText/UserText";
 import About from "./Pages/About/About";
 import Appointment from "./Pages/Appointment/Appointment";
 import Login from "./Pages/Authentication/Login/Login";
+import RequireAuth from "./Pages/Authentication/RequireAuth/RequireAuth";
 import Signup from "./Pages/Authentication/Signup/Signup";
 import Home from "./Pages/Home/Home";
 import NotFound from "./Pages/NotFound/NotFound";
@@ -22,7 +23,14 @@ function App() {
         <Route path="/home" element={<Home />}></Route>
         <Route path="/About" element={<About />}></Route>
         <Route path="/products" element={<Products />}></Route>
-        <Route path="/appointment" element={<Appointment />}></Route>
+        <Route
+          path="/appointment"
+          element={
+            <RequireAuth>
+              <Appointment />
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/verifyEmail" element={<UserText />}></Route>
