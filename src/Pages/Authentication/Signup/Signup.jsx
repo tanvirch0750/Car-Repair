@@ -40,7 +40,7 @@ const Signup = () => {
       placeholder: "Email",
       errorMessage: "It should be a valid email address!",
       label: "Email",
-      pattern: `^[^\s@]+@[^\s@]+\.[^\s@]+$`,
+      pattern: `^[^\@]+@[^\s@]+\.[^\@]+$`,
       required: true,
     },
     {
@@ -139,8 +139,8 @@ const Signup = () => {
               Login
             </Link>
           </p>
-          <Social text="Signup" />
         </form>
+        <Social text="Signup" />
       </div>
     </>
   );

@@ -1,9 +1,15 @@
+.social {
+  width: 60rem;
+  padding: 2rem;
+  padding-top: 0;
+}
+
 .or-separator {
   display: flex;
   align-items: center;
   gap: 2rem;
   font-size: 2rem;
-  padding: 1.5rem;
+  padding: 0 1.5rem;
 }
 .or-separator div {
   height: 1px;

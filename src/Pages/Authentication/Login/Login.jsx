@@ -98,8 +98,8 @@ const Login = () => {
               Sign Up
             </Link>
           </p>
-          <Social text="Login" />
         </form>
+        <Social text="Login" />
       </div>
     </>
   );

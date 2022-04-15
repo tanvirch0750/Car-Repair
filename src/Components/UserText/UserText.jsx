@@ -7,6 +7,7 @@ const UserText = () => {
   const [user] = useAuthState(auth);
   return (
     <div className="user-text">
+      {!user && <h2>Please login to see your email verified status</h2>}
       {user?.emailVerified === true && (
         <h2> Your email is verified. Your are good to go</h2>
       )}

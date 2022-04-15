@@ -32,7 +32,8 @@ form h1 {
   margin-bottom: 2rem;
 }
 
-form button {
+form button,
+.social-btn {
   width: 100%;
   padding: 2rem 0;
   border: none;
@@ -47,7 +48,7 @@ form button {
   text-transform: capitalize;
 }
 
-form .social-btn {
+.social-btn {
   background-color: #ee0d09;
 }
 
