@@ -1,11 +1,8 @@
 import React from "react";
+import PageHeadImg from "../../Components/Page-head-img/PageHeadImg";
 
 const Products = () => {
-  return (
-    <div>
-      <h1>This is products page</h1>
-    </div>
-  );
+  return <PageHeadImg text="Expolre our car accesorries" />;
 };
 
 export default Products;

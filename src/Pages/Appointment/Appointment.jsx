@@ -1,11 +1,8 @@
 import React from "react";
+import PageHeadImg from "../../Components/Page-head-img/PageHeadImg";
 
 const Appointment = () => {
-  return (
-    <div>
-      <h1>Get Appointment</h1>
-    </div>
-  );
+  return <PageHeadImg text="Schedule Appointment" />;
 };
 
 export default Appointment;

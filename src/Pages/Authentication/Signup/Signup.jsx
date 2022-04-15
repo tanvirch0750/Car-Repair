@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import FormInput from "../../../Components/FormInput/FormInput";
+import PageHeadImg from "../../../Components/Page-head-img/PageHeadImg";
 import Social from "../Social/Social";
 import "./Signup.css";
 
@@ -88,27 +89,30 @@ const Signup = () => {
   console.log(values);
 
   return (
-    <div className="signup">
-      <form onSubmit={handleSubmit} className="form">
-        <h1>Register</h1>
-        {inputs.map((input) => (
-          <FormInput
-            key={input.id}
-            {...input}
-            value={values[input.name]}
-            onChange={onChange}
-          />
-        ))}
-        <button>Register</button>
-        <p className="login-signup-text">
-          Already have an account?{" "}
-          <Link to="/login" className="login-signup-link">
-            Login
-          </Link>
-        </p>
-        <Social text="Signup" />
-      </form>
-    </div>
+    <>
+      <PageHeadImg text="Please Signup for better experience" />
+      <div className="signup">
+        <form onSubmit={handleSubmit} className="form signup-form">
+          <h1>Register</h1>
+          {inputs.map((input) => (
+            <FormInput
+              key={input.id}
+              {...input}
+              value={values[input.name]}
+              onChange={onChange}
+            />
+          ))}
+          <button>Register</button>
+          <p className="login-signup-text">
+            Already have an account?{" "}
+            <Link to="/login" className="login-signup-link">
+              Login
+            </Link>
+          </p>
+          <Social text="Signup" />
+        </form>
+      </div>
+    </>
   );
 };
 
