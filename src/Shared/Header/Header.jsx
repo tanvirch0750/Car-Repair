@@ -27,6 +27,9 @@ const Header = () => {
           <Link className="nav-link" to="/about">
             About
           </Link>
+          <Link className="nav-link" to="/services">
+            Services
+          </Link>
           <Link className="nav-link" to="/products">
             Products
           </Link>
@@ -45,11 +48,11 @@ const Header = () => {
               Log in
             </Link>
           )}
-          {!user && (
+          {/* {!user && (
             <Link className="nav-link" to="/signup">
               Sign up
             </Link>
-          )}
+          )} */}
           <button onClick={() => navigate("/appointment")} className="btn">
             Get Appointment
           </button>
