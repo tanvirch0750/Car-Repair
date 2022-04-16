@@ -1,5 +1,9 @@
 .page-head-img {
-  background: linear-gradient(to right, rgba(8, 24, 74, 0.685) 50%, transparent),
+  background: linear-gradient(
+      to right,
+      rgba(8, 24, 74, 0.8),
+      rgba(8, 24, 74, 0.8)
+    ),
     url("../../images/page-head.jpg");
   background-size: cover;
   background-position: center;

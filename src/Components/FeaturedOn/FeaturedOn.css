@@ -1,0 +1,22 @@
+.featured-on {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  justify-items: center;
+
+  padding: 3rem 0;
+}
+
+.featured-on h2 {
+  font-size: 2rem;
+  color: #08194a;
+}
+
+.featured-on img {
+  opacity: 0.7;
+  transition: 300ms;
+}
+
+.featured-on img:hover {
+  opacity: 1;
+}
