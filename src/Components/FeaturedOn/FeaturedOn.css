@@ -1,3 +1,7 @@
+.featured-on-main {
+  border-bottom: 1px solid rgba(8, 24, 74, 0.158);
+}
+
 .featured-on {
   display: grid;
   grid-template-columns: repeat(6, 1fr);

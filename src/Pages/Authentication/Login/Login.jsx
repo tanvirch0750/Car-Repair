@@ -85,6 +85,7 @@ const Login = () => {
       <div className="login">
         <form onSubmit={handleSubmit} className="form login-form">
           <h1>Login</h1>
+
           {inputs.map((input) => (
             <FormInput
               key={input.id}

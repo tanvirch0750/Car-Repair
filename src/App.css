@@ -14,13 +14,11 @@
   color: #fff;
   font-size: 1.8rem;
   font-weight: 500;
-  border-radius: 0.5rem;
   cursor: pointer;
   text-transform: uppercase;
 }
 
 .btn-lg {
-  border-radius: 0px;
   padding: 2rem 4rem;
 }
 

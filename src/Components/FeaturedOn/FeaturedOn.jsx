@@ -16,11 +16,13 @@ const featuredImages = [
 
 const FeaturedOn = () => {
   return (
-    <div className="featured-on container">
-      <h2>Featured On</h2>
-      {featuredImages.map((img, idx) => (
-        <img src={img} key={idx} alt="featured on"></img>
-      ))}
+    <div className="featured-on-main">
+      <div className="featured-on container">
+        <h2>Featured On</h2>
+        {featuredImages.map((img, idx) => (
+          <img src={img} key={idx} alt="featured on"></img>
+        ))}
+      </div>
     </div>
   );
 };

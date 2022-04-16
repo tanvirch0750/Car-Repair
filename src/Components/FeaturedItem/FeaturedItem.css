@@ -1,0 +1,21 @@
+.featured-item {
+  background-size: cover;
+  background-position: center;
+  padding: 4rem;
+  color: #fff;
+  text-align: center;
+}
+
+.featured-icon {
+  font-size: 8rem;
+  margin-bottom: 2rem;
+}
+
+.featured-item h2 {
+  font-size: 3.2rem;
+  margin-bottom: 2rem;
+}
+
+.featured-item p {
+  font-size: 1.8rem;
+}

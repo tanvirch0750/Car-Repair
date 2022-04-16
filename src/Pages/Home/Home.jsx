@@ -2,6 +2,7 @@ import React from "react";
 import Carousel, {
   CarouselItem,
 } from "../../Components/CarouselItem/CarouselItem";
+import FeaturedItems from "../../Components/FeaturedItems/FeaturedItems";
 import FeaturedOn from "../../Components/FeaturedOn/FeaturedOn";
 import bannerImageOne from "../../images/banner-image-1.jpg";
 import bannerImageTwo from "../../images/banner-image-2.jpg";
@@ -53,6 +54,7 @@ const Home = () => {
         </Carousel>
       </div>
       <FeaturedOn />
+      <FeaturedItems />
     </>
   );
 };

@@ -1,0 +1,7 @@
+.featured-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-gap: 6rem;
+
+  padding: 12rem 0;
+}
