@@ -4,6 +4,7 @@ import Carousel, {
 } from "../../Components/CarouselItem/CarouselItem";
 import FeaturedItems from "../../Components/FeaturedItems/FeaturedItems";
 import FeaturedOn from "../../Components/FeaturedOn/FeaturedOn";
+import Services from "../../Components/Services/Services";
 import bannerImageOne from "../../images/banner-image-1.jpg";
 import bannerImageTwo from "../../images/banner-image-2.jpg";
 import bannerImageThree from "../../images/banner-image-3.jpg";
@@ -55,6 +56,7 @@ const Home = () => {
       </div>
       <FeaturedOn />
       <FeaturedItems />
+      <Services />
     </>
   );
 };

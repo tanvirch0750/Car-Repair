@@ -8,6 +8,7 @@ import Signup from "./Pages/Authentication/Signup/Signup";
 import Home from "./Pages/Home/Home";
 import NotFound from "./Pages/NotFound/NotFound";
 import Products from "./Pages/Products/Products";
+import ServiceDetail from "./Pages/ServiceDetail/ServiceDetail";
 import Services from "./Pages/Services/Services";
 import Footer from "./Shared/Footer/Footer";
 import Header from "./Shared/Header/Header";
@@ -23,6 +24,10 @@ function App() {
         <Route path="/home" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/services" element={<Services />}></Route>
+        <Route
+          path="/service/:serviceId"
+          element={<ServiceDetail></ServiceDetail>}
+        ></Route>
         <Route path="/products" element={<Products />}></Route>
         <Route
           path="/appointment"
