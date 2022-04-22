@@ -1,0 +1,18 @@
+.verification-email {
+  padding: 6.4rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.verification-email h2 {
+  font-size: 3.4rem;
+  color: #08194a;
+}
+
+.verification-email h4 {
+  font-size: 2.6rem;
+  color: #ee0d09;
+  margin-bottom: 2.4rem;
+}

@@ -112,13 +112,9 @@ const Signup = () => {
   const navigate = useNavigate();
   useEffect(() => {
     if (user) {
-      if (user1?.emailVerified === true) {
-        navigate(from, { replace: true });
-      } else {
-        navigate("/verifyEmail");
-      }
+      navigate(from, { replace: true });
     }
-  }, [user, navigate, user1, from]);
+  }, [user, navigate, from]);
 
   return (
     <>

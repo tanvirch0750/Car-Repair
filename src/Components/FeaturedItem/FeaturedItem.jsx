@@ -13,14 +13,14 @@ const FeaturedItem = ({ feature }) => {
  url(${image})`;
   const lg2 = `linear-gradient(
    to right,
-   rgba(238, 13, 9, 0.8),
-   rgba(238, 13, 9, 0.8)
+   rgba(238, 13, 9, 0.9),
+   rgba(238, 13, 9, 0.9)
  ),
  url(${image})`;
   const lg3 = `linear-gradient(
    to right,
-   rgba(0, 0, 0, 0.863),
-   rgba(0, 0, 0, 0.863)
+   rgba(38, 219, 236, 0.9),
+   rgba(38, 219, 236, 0.9)
  ),
  url(${image})`;
 

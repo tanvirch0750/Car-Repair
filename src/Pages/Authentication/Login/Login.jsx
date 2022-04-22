@@ -67,13 +67,9 @@ const Login = () => {
   const navigate = useNavigate();
   useEffect(() => {
     if (user) {
-      if (user1?.emailVerified === true) {
-        navigate(from, { replace: true });
-      } else {
-        navigate("/verifyEmail");
-      }
+      navigate(from, { replace: true });
     }
-  }, [user, navigate, user1, from]);
+  }, [user, navigate, from]);
 
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
