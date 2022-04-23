@@ -12,6 +12,7 @@ import NotFound from "./Pages/NotFound/NotFound";
 import Products from "./Pages/Products/Products";
 import ServiceDetail from "./Pages/ServiceDetail/ServiceDetail";
 import Services from "./Pages/Services/Services";
+import UpdateService from "./Pages/UpdateService/UpdateService";
 import Footer from "./Shared/Footer/Footer";
 import Header from "./Shared/Header/Header";
 import SubHeader from "./Shared/Sub-Header/SubHeader";
@@ -35,6 +36,14 @@ function App() {
           element={
             <RequireAuth>
               <AddService />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/update-service/:id"
+          element={
+            <RequireAuth>
+              <UpdateService />
             </RequireAuth>
           }
         ></Route>

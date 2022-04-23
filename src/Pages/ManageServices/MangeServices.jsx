@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import PageHeadImg from "../../Components/Page-head-img/PageHeadImg";
 import useServices from "../../Hooks/useServices";
 import "./MangeServices.css";
@@ -22,29 +23,49 @@ const MangeServices = () => {
     }
   };
 
+  const navigate = useNavigate();
+  const handleUpdate = (id) => {
+    navigate(`/update-service/${id}`);
+  };
+
   return (
     <>
       <PageHeadImg text="Manage Services" />
       <div className="container">
-        <h2>Manage services</h2>
-        <div className="manage-services-container">
-          <div className="manaege-service">
-            <h3>Name</h3>
-            <h3>Price</h3>
-            <h3>Delete</h3>
-          </div>
-          {services.map((service) => {
-            return (
-              <div className="manaege-service" key={service._id}>
-                <h3>{service.name}</h3>
-                <p>{service.price}</p>
-                <button onClick={() => handleDelete(service._id)}>
-                  Delete
-                </button>
-              </div>
-            );
-          })}
-        </div>
+        <h2 className="text-center">Manage services</h2>
+        <table className="manaege-service">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th width="350px">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {services.map((service) => {
+              return (
+                <tr key={service._id}>
+                  <td>{service.name}</td>
+                  <td>{service.price}</td>
+                  <td className="buttons">
+                    <button
+                      className="delete-btn"
+                      onClick={() => handleDelete(service._id)}
+                    >
+                      Delete
+                    </button>
+                    <button
+                      className="update-btn"
+                      onClick={() => handleUpdate(service._id)}
+                    >
+                      Update
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
     </>
   );
