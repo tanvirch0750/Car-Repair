@@ -7,6 +7,14 @@
   padding: 2rem;
 }
 
+.text-center {
+  text-align: center;
+}
+
+h2 {
+  font-size: 4.4rem;
+}
+
 .btn {
   padding: 1.5rem 2rem;
   border: none;
@@ -72,4 +80,35 @@ form button,
   text-align: center;
   color: #ee0d09;
   font-weight: 600;
+}
+
+.hook-form {
+  max-width: 60rem;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hook-form input,
+.hook-form textarea {
+  width: 100%;
+  padding: 1.7rem 0.8rem;
+  font-size: 1.8rem;
+  font-family: "Open Sans", sans-serif;
+  border: 1px solid rgba(8, 24, 74, 0.288);
+}
+
+.hook-form span {
+  font-size: 1.6rem;
+  color: #ee0d09;
+  padding-left: 0.8rem;
+}
+
+.hook-submit {
+  border: none !important;
+  background-color: #ee0d09;
+  color: #fff;
+  cursor: pointer;
 }

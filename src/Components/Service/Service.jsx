@@ -12,7 +12,7 @@ const Service = ({ service }) => {
   return (
     <div className="service">
       <img className="w-100" src={img} alt="" />
-      <h2>{name}</h2>
+      <h3>{name}</h3>
       <p>Price: {price}</p>
       <p>
         <small>{description}</small>

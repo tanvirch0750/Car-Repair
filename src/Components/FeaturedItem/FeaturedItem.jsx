@@ -30,7 +30,7 @@ const FeaturedItem = ({ feature }) => {
     <div className="featured-item" style={{ backgroundImage: condition }}>
       <Icon className="featured-icon" />
 
-      <h2>{heading}</h2>
+      <h3>{heading}</h3>
       <p>{text}</p>
     </div>
   );
