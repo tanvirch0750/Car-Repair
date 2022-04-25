@@ -15,7 +15,7 @@ const UpdateService = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/service/${id}`)
+    fetch(`https://stark-sands-89628.herokuapp.com/service/${id}`)
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);
@@ -23,7 +23,7 @@ const UpdateService = () => {
   console.log(service);
 
   const onSubmit = (data) => {
-    const url = `http://localhost:5000/service/${id}`;
+    const url = `https://stark-sands-89628.herokuapp.com/service/${id}`;
 
     // send data to the server
     fetch(url, {

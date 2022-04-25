@@ -10,7 +10,7 @@ const AddService = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    const url = "http://localhost:5000/service";
+    const url = "https://stark-sands-89628.herokuapp.com/service";
     fetch(url, {
       method: "POST",
       headers: {
