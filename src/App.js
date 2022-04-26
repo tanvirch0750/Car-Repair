@@ -6,6 +6,7 @@ import Appointment from "./Pages/Appointment/Appointment";
 import Login from "./Pages/Authentication/Login/Login";
 import RequireAuth from "./Pages/Authentication/RequireAuth/RequireAuth";
 import Signup from "./Pages/Authentication/Signup/Signup";
+import Checkout from "./Pages/Checkout/Checkout";
 import Home from "./Pages/Home/Home";
 import MangeServices from "./Pages/ManageServices/MangeServices";
 import NotFound from "./Pages/NotFound/NotFound";
@@ -52,6 +53,14 @@ function App() {
           element={
             <RequireAuth>
               <MangeServices />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/checkout/:id"
+          element={
+            <RequireAuth>
+              <Checkout />
             </RequireAuth>
           }
         ></Route>

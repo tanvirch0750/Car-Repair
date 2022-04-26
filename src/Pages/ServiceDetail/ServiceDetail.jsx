@@ -1,21 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import React from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import useServiceDetail from "../../Hooks/useServiceDetail";
 
 const ServiceDetail = () => {
   const { serviceId } = useParams();
-  const [service, setService] = useState();
+  const [serviceDetail] = useServiceDetail(serviceId);
 
-  useEffect(() => {
-    fetch(`https://stark-sands-89628.herokuapp.com/service/${serviceId}`)
-      .then((res) => res.json())
-      .then((data) => setService(data));
-  }, []);
+  const navigate = useNavigate();
 
   return (
     <div>
-      <h2>You are about to book: {service?.name}</h2>
+      <h2>You are about to book: {serviceDetail?.name}</h2>
       <div className="text-center">
-        <Link to="/checkout">
+        <Link to={`/checkout/${serviceDetail?._id}`}>
           <button className="btn btn-primary">Proceed Checkout</button>
         </Link>
       </div>
