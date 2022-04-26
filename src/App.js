@@ -10,6 +10,7 @@ import Checkout from "./Pages/Checkout/Checkout";
 import Home from "./Pages/Home/Home";
 import MangeServices from "./Pages/ManageServices/MangeServices";
 import NotFound from "./Pages/NotFound/NotFound";
+import Orders from "./Pages/Orders/Orders";
 import Products from "./Pages/Products/Products";
 import ServiceDetail from "./Pages/ServiceDetail/ServiceDetail";
 import Services from "./Pages/Services/Services";
@@ -61,6 +62,14 @@ function App() {
           element={
             <RequireAuth>
               <Checkout />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/orders"
+          element={
+            <RequireAuth>
+              <Orders />
             </RequireAuth>
           }
         ></Route>

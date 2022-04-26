@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import FormInput from "../../Components/FormInput/FormInput";
 import PageHeadImg from "../../Components/Page-head-img/PageHeadImg";
 import useServiceDetail from "../../Hooks/useServiceDetail";
@@ -16,7 +16,7 @@ const Checkout = () => {
     phoneNumber: "",
   });
   const [orderComplete, setOrderComplete] = useState(false);
-
+  const navigate = useNavigate();
   const location = useLocation();
   const from = location?.state?.from?.pathname || "/";
 
@@ -92,6 +92,11 @@ const Checkout = () => {
       });
   };
 
+  const handleOrders = () => {
+    console.log("goto orders");
+    navigate("/orders");
+  };
+
   if (orderComplete) {
     return (
       <>
@@ -100,6 +105,9 @@ const Checkout = () => {
           <h1>
             Thank you for place your order. We will contact with you shortly.
           </h1>
+          <button className="btn btn-primary" onClick={handleOrders}>
+            Your Orders
+          </button>
         </div>
       </>
     );
