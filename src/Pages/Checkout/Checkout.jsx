@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import FormInput from "../../Components/FormInput/FormInput";
@@ -14,6 +15,7 @@ const Checkout = () => {
     address: "",
     phoneNumber: "",
   });
+  const [orderComplete, setOrderComplete] = useState(false);
 
   const location = useLocation();
   const from = location?.state?.from?.pathname || "/";
@@ -65,10 +67,43 @@ const Checkout = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handlePlaceOrder = (e) => {
     e.preventDefault();
-    console.log(values);
+    const order = {
+      service: serviceDetail?.name,
+      serviceId: serviceDetail?._id,
+      name: values.name,
+      email: values.email,
+      phone: values.phoneNumber,
+      address: values.address,
+    };
+
+    axios
+      .post(`https://stark-sands-89628.herokuapp.com/order`, order)
+      .then((res) => {
+        const { data } = res;
+        if (data.insertedId) {
+          alert("Your order is booked");
+          setOrderComplete(true);
+        } else {
+          alert("something went wrong, please try agin");
+          setOrderComplete(false);
+        }
+      });
   };
+
+  if (orderComplete) {
+    return (
+      <>
+        <PageHeadImg text={`Checkout: ${serviceDetail?.name}`} />
+        <div className="checkout container">
+          <h1>
+            Thank you for place your order. We will contact with you shortly.
+          </h1>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
@@ -76,7 +111,7 @@ const Checkout = () => {
       <div className="checkout container">
         <h1>Checout: {serviceDetail?.name}</h1>
         <h1>Price: ${serviceDetail?.price}</h1>
-        <form onSubmit={handleSubmit} className="form signup-form">
+        <form onSubmit={handlePlaceOrder} className="form signup-form">
           {inputs.map((input) => (
             <FormInput
               key={input.id}
