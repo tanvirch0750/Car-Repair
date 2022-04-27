@@ -18,6 +18,7 @@ const Login = () => {
 
   const location = useLocation();
   const from = location?.state?.from?.pathname || "/";
+  const navigate = useNavigate();
 
   const [values, setValues] = useState({
     email: "",
@@ -64,7 +65,6 @@ const Login = () => {
     signInWithEmailAndPassword(values.email, values.password);
   };
 
-  const navigate = useNavigate();
   useEffect(() => {
     if (user) {
       navigate(from, { replace: true });

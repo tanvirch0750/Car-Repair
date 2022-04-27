@@ -1,17 +1,20 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import FormInput from "../../Components/FormInput/FormInput";
 import PageHeadImg from "../../Components/Page-head-img/PageHeadImg";
+import auth from "../../Firebase/Firebase.init";
 import useServiceDetail from "../../Hooks/useServiceDetail";
 import "./Checkout.css";
 
 const Checkout = () => {
   const { id } = useParams();
   const [serviceDetail] = useServiceDetail(id);
+  const [user] = useAuthState(auth);
   const [values, setValues] = useState({
     name: "",
-    email: "",
+    email: user.email,
     address: "",
     phoneNumber: "",
   });
@@ -126,10 +129,14 @@ const Checkout = () => {
               {...input}
               value={values[input.name]}
               onChange={onChange}
+              readOnly={input.type === "email" ? true : false}
             />
           ))}
 
           <button>Checkout</button>
+          <button className="btn btn-primary" onClick={handleOrders}>
+            Your Orders
+          </button>
         </form>
       </div>
     </>

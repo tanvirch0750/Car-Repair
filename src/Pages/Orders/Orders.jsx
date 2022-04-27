@@ -14,6 +14,7 @@ const Orders = () => {
       const email = user.email;
       const url = `https://stark-sands-89628.herokuapp.com/order?email=${email}`;
       const { data } = await axios.get(url);
+
       setOrders(data);
     };
     getOrders();
