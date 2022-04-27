@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import {
   useAuthState,
@@ -60,16 +61,23 @@ const Login = () => {
     }
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(values.email, values.password);
+    await signInWithEmailAndPassword(values.email, values.password);
+    const email = values.email;
+    const { data } = await axios.post(
+      "https://stark-sands-89628.herokuapp.com/login",
+      { email }
+    );
+    localStorage.setItem("accessToken", data.accessToken);
+    navigate(from, { replace: true });
   };
 
-  useEffect(() => {
-    if (user) {
-      navigate(from, { replace: true });
-    }
-  }, [user, navigate, from]);
+  // useEffect(() => {
+  //   if (user) {
+  //     navigate(from, { replace: true });
+  //   }
+  // }, [user, navigate, from]);
 
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
